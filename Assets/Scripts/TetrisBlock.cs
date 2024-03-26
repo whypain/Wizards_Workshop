@@ -69,12 +69,8 @@ public class TetrisBlock : MonoBehaviour
 
     private void OnMouseExit()
     {
-        float mouseExitedForSeconds = 0f;
-        mouseExitedForSeconds += Time.deltaTime;
 
-        Debug.Log($"Timer + deltaTime; {mouseExitedForSeconds} + {Time.deltaTime} = {mouseExitedForSeconds + Time.deltaTime}");
-
-        if (!Input.GetMouseButton(0) || mouseExitedForSeconds >= 0.2)
+        if (!Input.GetMouseButton(0))
         {
             moveable = false;
         }
