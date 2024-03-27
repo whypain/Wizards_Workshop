@@ -2,18 +2,22 @@ using UnityEngine;
 
 public class TetrisBlock : MonoBehaviour
 {
+    // SerializeField variables
     [SerializeField] private LayerMask _layerMask;
     [SerializeField] private GameObject _redTint;
     [SerializeField] private SpriteRenderer _renderer;
 
-    private GameObject _cursor;
-    public bool moveable = false;
-
+    // SpriteRenderer related variables
     private RedTint red;
-
     private int defaultSortingOrder = 10;
     private Vector2 defaultSize;
+    private Color spriteColor;
 
+    // idk
+    private GameObject _cursor;
+
+    // public variables
+    public bool moveable = false;
     public bool snap = false;
     public Vector2 snapPos;
 
@@ -25,6 +29,8 @@ public class TetrisBlock : MonoBehaviour
         _cursor = GameObject.Find("Cursor");
 
         red = _redTint.GetComponent<RedTint>();
+
+        spriteColor = _renderer.color;
 
     }
 
@@ -112,6 +118,24 @@ public class TetrisBlock : MonoBehaviour
 
         transform.parent = null;
 
+    }
+
+    public bool isFading = false;
+    public void fade()
+    {
+        _renderer.color = new Color(spriteColor.r, spriteColor.g, spriteColor.b, 0.2f);
+        isFading = true;
+    }
+
+    public void unFade()
+    {
+        _renderer.color = new Color(spriteColor.r, spriteColor.g, spriteColor.b, 1f);
+        isFading = false;
+    }
+
+    public void selfDestruct()
+    {
+        Destroy(gameObject);
     }
 
 }

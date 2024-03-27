@@ -32,12 +32,17 @@ public class Tile : MonoBehaviour
 
         if (tetris.IsFollowingTheMouse()) 
         {
-           
+            if (Vector2.Distance(tetris.transform.position, tetris.snapPos) > 2)
+            {
+                tetris.fade();
+            }
+
+
             if (Vector2.Distance(transform.position, tetris.transform.position) < 0.5)
             {
                 tetris.snapPos = transform.position;
                 _snapPreviewObject.SetActive(true);
-
+                tetris.unFade();
             }
             else
             {
@@ -50,6 +55,11 @@ public class Tile : MonoBehaviour
         {
             if (!tetris.snap)
             {
+                if (tetris.isFading)
+                {
+                    tetris.selfDestruct();
+                }
+
                 tetris.setPos();
                 _snapPreviewObject.SetActive(false);
             }
