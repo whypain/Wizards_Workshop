@@ -14,6 +14,7 @@ public class TetrisBlock : MonoBehaviour
     private SpriteRenderer snapSpriteRenderer;
 
     private int defaultSortingOrder = 10;
+    private Vector2 defaultSize;
 
     public bool snap = false;
     public Vector2 snapPos;
@@ -21,6 +22,7 @@ public class TetrisBlock : MonoBehaviour
     private void Start()
     {
         _renderer = GetComponent<SpriteRenderer>();
+        defaultSize = transform.localScale;
 
         snapSpriteRenderer = _snapPreview.GetComponent<SpriteRenderer>();
         snapSpriteRenderer.sprite = _renderer.sprite;
@@ -38,10 +40,11 @@ public class TetrisBlock : MonoBehaviour
         if (moveable && Input.GetMouseButtonUp(0))
         {
             // animations go here
- 
+            _renderer.sortingOrder = defaultSortingOrder;
+            red.DynamicOrderInLayer();
+            transform.localScale = defaultSize;
         }
-        _renderer.sortingOrder = defaultSortingOrder;
-        red.DynamicOrderInLayer();
+        
     }
 
     public void Drag()
@@ -55,8 +58,10 @@ public class TetrisBlock : MonoBehaviour
         if (_cursor.transform.childCount == 0)
         {
             transform.SetParent(_cursor.transform, true);
+            transform.localScale = defaultSize * 1.1f;
+
         }
-        
+
     }
 
 
