@@ -5,7 +5,7 @@ public class Grid: MonoBehaviour
 {
     [SerializeField] private int _width, _height;
     [SerializeField] private Tile _tilePrefab;
-    [SerializeField] private Tile _borderPrefab;
+    [SerializeField] private Sprite _borderSprite;
     [SerializeField] private Transform _cam;
 
     private Dictionary<Vector2?, Tile> tiles;
@@ -18,14 +18,15 @@ public class Grid: MonoBehaviour
     void GenerateGrid()
     {
         tiles = new Dictionary<Vector2?, Tile>();
-        for (int x = 0; x < _width; x++)
+        for (int x = 0; x <= _width; x++)
         {
-            for (int y = 0; y < _height; y++)
+            for (int y = 0; y <= _height; y++)
             {
 
-                if (x == 0|| y == 0 || x == _width - 1 || y == _height - 1)
+                if (x == 0|| y == 0 || x == _width || y == _height)
                 {
-                    var spawnedBorder = Instantiate(_borderPrefab, new Vector3(x, y, 0), Quaternion.identity);
+                    var spawnedBorder = Instantiate(_tilePrefab, new Vector3(x, y, 0), Quaternion.identity);
+                    spawnedBorder.GetComponent<SpriteRenderer>().sprite = _borderSprite;
                     spawnedBorder.name = $"Border ({x}, {y})";
                 }
 

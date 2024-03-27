@@ -5,23 +5,30 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
+    [SerializeField] GameObject _snapPreviewObject;
 
+    private SpriteRenderer snapPreviewSpriteRenderer;
     private TetrisBlock tetris;
-    private SpriteRenderer tetris_sprite;
+    private SpriteRenderer tetrisSpriteRenderer;
+
+
+    private void Start()
+    {
+        snapPreviewSpriteRenderer = _snapPreviewObject.GetComponent<SpriteRenderer>();
+    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         tetris = collision.GetComponent<TetrisBlock>();
-        tetris_sprite = collision.GetComponent<SpriteRenderer>();
+        tetrisSpriteRenderer = collision.GetComponent<SpriteRenderer>();
+
+        snapPreviewSpriteRenderer.sprite = tetrisSpriteRenderer.sprite;
+
     }
 
     private void Update()
     {
         if (tetris == null) { return; }
-
-        Vector2 mousePos = Input.mousePosition;
-        Vector2 screenPos = Camera.main.ScreenToWorldPoint(mousePos);
-        
 
         if (tetris.IsFollowingTheMouse()) 
         {
@@ -29,8 +36,12 @@ public class Tile : MonoBehaviour
             if (Vector2.Distance(transform.position, tetris.transform.position) < 0.6)
             {
                 tetris.snapPos = transform.position;
-                tetris.setSnapPreview();
+                _snapPreviewObject.SetActive(true);
 
+            }
+            else
+            {
+                _snapPreviewObject.SetActive(false);
             }
 
  
@@ -40,7 +51,6 @@ public class Tile : MonoBehaviour
             if (!tetris.snap)
             {
                 tetris.setPos();
-                tetris.delSnapPreview();
  
             }
 

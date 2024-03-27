@@ -155,7 +155,7 @@ MonoBehaviour:
   _width: 7
   _height: 7
   _tilePrefab: {fileID: 7153897284812745312, guid: 01912133759d8e743bfca8f55fc60dd9, type: 3}
-  _borderPrefab: {fileID: 7153897284812745312, guid: 77fae6191ed5f27458092d57cfaaae5f, type: 3}
+  _borderSprite: {fileID: 21300000, guid: 14dddfe857fce394a827233b8ac2d246, type: 3}
   _cam: {fileID: 794249358}
 --- !u!4 &271614748
 Transform:

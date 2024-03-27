@@ -4,7 +4,7 @@ public class TetrisBlock : MonoBehaviour
 {
     [SerializeField] private LayerMask _layerMask;
     [SerializeField] private GameObject _redTint;
-    [SerializeField] private GameObject _snapPreview;
+    //[SerializeField] private GameObject _snapPreview;
     [SerializeField] private SpriteRenderer _renderer;
 
     private GameObject _cursor;
@@ -24,8 +24,8 @@ public class TetrisBlock : MonoBehaviour
         _renderer = GetComponent<SpriteRenderer>();
         defaultSize = transform.localScale;
 
-        snapSpriteRenderer = _snapPreview.GetComponent<SpriteRenderer>();
-        snapSpriteRenderer.sprite = _renderer.sprite;
+        //snapSpriteRenderer = _snapPreview.GetComponent<SpriteRenderer>();
+        //snapSpriteRenderer.sprite = _renderer.sprite;
 
         _cursor = GameObject.Find("Cursor");
 
@@ -120,13 +120,13 @@ public class TetrisBlock : MonoBehaviour
 
     public void setSnapPreview()
     {
-        _snapPreview.SetActive(true);
-        _snapPreview.transform.position = snapPos;
+        //_snapPreview.SetActive(true);
+        //_snapPreview.transform.position = snapPos;
     }
 
     public void delSnapPreview()
     {
-        _snapPreview.SetActive(false);
+        //_snapPreview.SetActive(false);
     }
 
 }
