@@ -51,9 +51,13 @@ public class Tile : MonoBehaviour
 
  
         }
+
+        // if tetris stop following the mouse
         else
         {
-            if (!tetris.snap)
+            _snapPreviewObject.SetActive(false);
+
+            if (!tetris.snap) // if tetris hasn't snapped
             {
                 if (tetris.isFading)
                 {
@@ -61,7 +65,6 @@ public class Tile : MonoBehaviour
                 }
 
                 tetris.setPos();
-                _snapPreviewObject.SetActive(false);
             }
 
         }

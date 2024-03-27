@@ -27,6 +27,7 @@ public class Grid: MonoBehaviour
                 {
                     var spawnedBorder = Instantiate(_tilePrefab, new Vector3(x, y, 0), Quaternion.identity);
                     spawnedBorder.GetComponent<SpriteRenderer>().sprite = _borderSprite;
+                    spawnedBorder.tag = "gridBorder";
                     spawnedBorder.name = $"Border ({x}, {y})";
                 }
 
