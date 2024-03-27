@@ -51,7 +51,7 @@ public class Tile : MonoBehaviour
             if (!tetris.snap)
             {
                 tetris.setPos();
- 
+                _snapPreviewObject.SetActive(false);
             }
 
         }
