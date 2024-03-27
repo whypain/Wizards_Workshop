@@ -68,6 +68,7 @@ public class TetrisBlock : MonoBehaviour
 
     private void OnMouseEnter()
     {
+        Debug.Log($"Enter {name}");
         if (Input.GetMouseButton(0)) { return;  }
         moveable = true;
     }

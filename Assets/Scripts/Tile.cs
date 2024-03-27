@@ -33,7 +33,7 @@ public class Tile : MonoBehaviour
         if (tetris.IsFollowingTheMouse()) 
         {
            
-            if (Vector2.Distance(transform.position, tetris.transform.position) < 0.6)
+            if (Vector2.Distance(transform.position, tetris.transform.position) < 0.5)
             {
                 tetris.snapPos = transform.position;
                 _snapPreviewObject.SetActive(true);
