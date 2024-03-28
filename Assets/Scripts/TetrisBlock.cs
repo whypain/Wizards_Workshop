@@ -17,6 +17,7 @@ public class TetrisBlock : MonoBehaviour
     private GameObject _cursor;
 
     // public variables
+    public string displayName;
     public bool moveable = false;
     public bool snap = false;
     public Vector2 snapPos;

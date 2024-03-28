@@ -234,11 +234,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   _redTint: {fileID: 4580625600170712649}
-  _snapPreview: {fileID: 0}
   _renderer: {fileID: 6636195864228078272}
+  displayName: 
   moveable: 0
   snap: 0
   snapPos: {x: 0, y: 0}
+  isFading: 0
 --- !u!61 &5477504317586177001
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -313,7 +314,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -358,7 +359,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -403,7 +404,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

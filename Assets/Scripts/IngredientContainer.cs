@@ -16,7 +16,7 @@ public class IngredientContainer : MonoBehaviour
         ingredientSpriteRenderer = _ingredientPrefab.GetComponent<SpriteRenderer>();
         _ingredientImage.sprite = ingredientSpriteRenderer.sprite;
 
-        _ingredientText.text = _ingredientPrefab.name;
+        _ingredientText.text = _ingredientPrefab.GetComponent<TetrisBlock>().displayName;
     }
 
     public void SpawnIngredientTetris()
