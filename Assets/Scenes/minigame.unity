@@ -898,7 +898,7 @@ PrefabInstance:
     - target: {fileID: 7056938674327619153, guid: 378859d182ff7a84797c7939152ee3ed, type: 3}
       propertyPath: _ingredientPrefab
       value: 
-      objectReference: {fileID: 9183319446020307831, guid: b5aab91bc08db714a9cd2e30c85786fa, type: 3}
+      objectReference: {fileID: 6674025448984912961, guid: 05b2730ca7a795f49a34bc49aa40a104, type: 3}
     - target: {fileID: 9139342715497925096, guid: 378859d182ff7a84797c7939152ee3ed, type: 3}
       propertyPath: m_Name
       value: IngredientContainer (1)
@@ -1043,7 +1043,7 @@ PrefabInstance:
     - target: {fileID: 7056938674327619153, guid: 378859d182ff7a84797c7939152ee3ed, type: 3}
       propertyPath: _ingredientPrefab
       value: 
-      objectReference: {fileID: 8724636515399882704, guid: 431423f682f978b4180cea9842e2d6f5, type: 3}
+      objectReference: {fileID: 6674025448984912961, guid: bb16257d273f53449afbbc41bb3a4695, type: 3}
     - target: {fileID: 9139342715497925096, guid: 378859d182ff7a84797c7939152ee3ed, type: 3}
       propertyPath: m_Name
       value: IngredientContainer
