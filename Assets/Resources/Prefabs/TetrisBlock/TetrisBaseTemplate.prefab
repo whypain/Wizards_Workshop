@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 6071887608849660504}
   - component: {fileID: 4617779720933854491}
   m_Layer: 0
-  m_Name: TetrisTemplate
+  m_Name: TetrisBaseTemplate
   m_TagString: TetrisBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

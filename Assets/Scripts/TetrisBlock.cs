@@ -40,6 +40,8 @@ public class TetrisBlock : MonoBehaviour
         
         if (moveable && Input.GetMouseButtonUp(0))
         {
+            moveable = false;
+
             // animations go here
             _renderer.sortingOrder = defaultSortingOrder;
             red.DynamicOrderInLayer();

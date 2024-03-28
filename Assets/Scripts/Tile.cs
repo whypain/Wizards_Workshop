@@ -14,11 +14,15 @@ public class Tile : MonoBehaviour
 
     private void Start()
     {
+        if (gameObject.tag == "gridBorder") { return; }
+
         snapPreviewSpriteRenderer = _snapPreviewObject.GetComponent<SpriteRenderer>();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        if (gameObject.tag == "gridBorder") { return; }
+
         tetris = collision.GetComponent<TetrisBlock>();
         tetrisSpriteRenderer = collision.GetComponent<SpriteRenderer>();
 
@@ -28,6 +32,7 @@ public class Tile : MonoBehaviour
 
     private void Update()
     {
+        if (gameObject.tag == "gridBorder") { return; }
         if (tetris == null) { return; }
 
         if (tetris.IsFollowingTheMouse()) 
