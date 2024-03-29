@@ -11,6 +11,7 @@ public class Tile : MonoBehaviour
     private TetrisBlock tetris;
     private SpriteRenderer tetrisSpriteRenderer;
 
+    public bool isCovered;
 
     private void Start()
     {
