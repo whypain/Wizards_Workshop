@@ -15,6 +15,7 @@ public class TetrisBlock : MonoBehaviour
 
     // idk
     private GameObject _cursor;
+    private float targetRotation = 90;
 
     // public variables
     public string displayName;
@@ -39,13 +40,28 @@ public class TetrisBlock : MonoBehaviour
     {
         Drag();
         
+        if (IsFollowingTheMouse())
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Rotate(targetRotation);
+                if (targetRotation >= 360)
+                {
+                    targetRotation = 90;
+                }
+                else
+                {
+                    targetRotation += 90;
+                }
+            }
+        }
+
         if (moveable && Input.GetMouseButtonUp(0))
         {
             moveable = false;
 
             // animations go here
             _renderer.sortingOrder = defaultSortingOrder;
-            red.DynamicOrderInLayer();
             transform.localScale = defaultSize;
         }
         
@@ -68,6 +84,11 @@ public class TetrisBlock : MonoBehaviour
 
     }
 
+
+    private void Rotate(float targetRotation)
+    {
+        transform.rotation = Quaternion.Euler(0, 0, targetRotation);
+    }
 
 
     private void OnMouseEnter()

@@ -26,7 +26,11 @@ public class Tile : MonoBehaviour
         tetris = collision.GetComponent<TetrisBlock>();
         tetrisSpriteRenderer = collision.GetComponent<SpriteRenderer>();
 
-        snapPreviewSpriteRenderer.sprite = tetrisSpriteRenderer.sprite;
+        // set snap preview sprite to the same as the tetris thats hovering over it
+        snapPreviewSpriteRenderer.sprite = tetrisSpriteRenderer.sprite; 
+
+        // set rotation to be the same as the tetris hovering over it
+        _snapPreviewObject.transform.rotation = tetris.transform.rotation;
 
     }
 
